@@ -14,9 +14,9 @@ public class UsingTest {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
-				Target t1 = new Target(1);
+				TargetNormally t1 = new TargetNormally(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
 				t1.run();
 				t2.run();
@@ -27,8 +27,8 @@ public class UsingTest {
 
 	@Test
 	public void äOïîÉNÉâÉXÇÃïœêîÇèàóù() {
-		final Target t1 = new Target(1);
-		final Target t2 = new Target(2);
+		final TargetNormally t1 = new TargetNormally(1);
+		final TargetNormally t2 = new TargetNormally(2);
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -48,9 +48,9 @@ public class UsingTest {
 			public void run() throws IOException {
 				TargetUnrunnable t1 = new TargetUnrunnable(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
-				Target t3 = new Target(3);
+				TargetNormally t3 = new TargetNormally(3);
 				register(t3);
 				t1.run();
 				t2.run();
@@ -68,11 +68,11 @@ public class UsingTest {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
-				Target t1 = new Target(1);
+				TargetNormally t1 = new TargetNormally(1);
 				register(t1);
 				TargetUnrunnable t2 = new TargetUnrunnable(2);
 				register(t2);
-				Target t3 = new Target(3);
+				TargetNormally t3 = new TargetNormally(3);
 				register(t3);
 				t1.run();
 				t2.run();
@@ -90,9 +90,9 @@ public class UsingTest {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
-				Target t1 = new Target(1);
+				TargetNormally t1 = new TargetNormally(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
 				TargetUnrunnable t3 = new TargetUnrunnable(3);
 				register(t3);
@@ -114,9 +114,9 @@ public class UsingTest {
 			public void run() throws IOException {
 				TargetUncloseable t1 = new TargetUncloseable(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
-				Target t3 = new Target(3);
+				TargetNormally t3 = new TargetNormally(3);
 				register(t3);
 				t1.run();
 				t2.run();
@@ -134,11 +134,11 @@ public class UsingTest {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
-				Target t1 = new Target(1);
+				TargetNormally t1 = new TargetNormally(1);
 				register(t1);
 				TargetUncloseable t2 = new TargetUncloseable(2);
 				register(t2);
-				Target t3 = new Target(3);
+				TargetNormally t3 = new TargetNormally(3);
 				register(t3);
 				t1.run();
 				t2.run();
@@ -156,9 +156,9 @@ public class UsingTest {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
-				Target t1 = new Target(1);
+				TargetNormally t1 = new TargetNormally(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
 				TargetUncloseable t3 = new TargetUncloseable(3);
 				register(t3);
@@ -199,11 +199,11 @@ public class UsingTest {
 			public void run() throws IOException {
 				TargetUncloseable t1 = new TargetUncloseable(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
 				TargetUnrunnable t3 = new TargetUnrunnable(3);
 				register(t3);
-				Target t4 = new Target(4);
+				TargetNormally t4 = new TargetNormally(4);
 				register(t4);
 				TargetUncloseable t5 = new TargetUncloseable(5);
 				register(t5);
@@ -233,11 +233,11 @@ public class UsingTest {
 			public void run() throws IOException {
 				TargetUnrunnable t1 = new TargetUnrunnable(1);
 				register(t1);
-				Target t2 = new Target(2);
+				TargetNormally t2 = new TargetNormally(2);
 				register(t2);
 				TargetUncloseable t3 = new TargetUncloseable(3);
 				register(t3);
-				Target t4 = new Target(4);
+				TargetNormally t4 = new TargetNormally(4);
 				register(t4);
 				TargetUnrunnable t5 = new TargetUnrunnable(5);
 				register(t5);

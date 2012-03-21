@@ -1,8 +1,8 @@
 package com.kanasansoft.using;
 
-public class Target extends TargetBase {
+public class TargetNormally extends TargetBase {
 
-	Target(int id) {
+	TargetNormally(int id) {
 		super(id);
 	}
 
