@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import com.kanasansoft.using.TargetBase.STATUS;
+
 public class UsingTest {
 
 	@Test
@@ -280,6 +282,114 @@ public class UsingTest {
 			assertThat(t, instanceOf(IllegalArgumentException.class));
 			assertThat(t.getMessage(), is("Closeable is null."));
 		}
+	}
+
+	@Test
+	public void 正常に閉じられている() {
+		final TargetNormally t1 = new TargetNormally(1);
+		final TargetUnrunnable t2 = new TargetUnrunnable(2);
+		Using.execute(new Runnable() {
+			@Override
+			public void run() throws IOException {
+				register(t1);
+				register(t2);
+				t1.run();
+				t2.run();
+			}
+		});
+		assertThat(t1.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t2.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t1.getStatesRun(), is(STATUS.DONE));
+		assertThat(t2.getStatesRun(), is(STATUS.DOING));
+		assertThat(t1.getStatesClose(), is(STATUS.DONE));
+		assertThat(t2.getStatesClose(), is(STATUS.DONE));
+	}
+
+	@Test
+	public void クローズ処理に失敗() {
+		final TargetUncloseable t1 = new TargetUncloseable(1);
+		final TargetUnrunnableUncloseable t2 = new TargetUnrunnableUncloseable(2);
+		Using.execute(new Runnable() {
+			@Override
+			public void run() throws IOException {
+				register(t1);
+				register(t2);
+				t1.run();
+				t2.run();
+			}
+		});
+		assertThat(t1.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t2.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t1.getStatesRun(), is(STATUS.DONE));
+		assertThat(t2.getStatesRun(), is(STATUS.DOING));
+		assertThat(t1.getStatesClose(), is(STATUS.DOING));
+		assertThat(t2.getStatesClose(), is(STATUS.DOING));
+	}
+
+	@Test
+	public void 複雑なクローズ処理の判定1() {
+		final TargetNormally t1 = new TargetNormally(1);
+		final TargetUnrunnable t2 = new TargetUnrunnable(2);
+		final TargetUncloseable t3 = new TargetUncloseable(3);
+		final TargetUnrunnableUncloseable t4 = new TargetUnrunnableUncloseable(4);
+		Using.execute(new Runnable() {
+			@Override
+			public void run() throws IOException {
+				register(t1);
+				register(t2);
+				register(t3);
+				register(t4);
+				t1.run();
+				t2.run();
+				t3.run();
+				t4.run();
+			}
+		});
+		assertThat(t1.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t2.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t3.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t4.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t1.getStatesRun(), is(STATUS.DONE));
+		assertThat(t2.getStatesRun(), is(STATUS.DOING));
+		assertThat(t3.getStatesRun(), is(STATUS.NOT_DONE));
+		assertThat(t4.getStatesRun(), is(STATUS.NOT_DONE));
+		assertThat(t1.getStatesClose(), is(STATUS.DONE));
+		assertThat(t2.getStatesClose(), is(STATUS.DONE));
+		assertThat(t3.getStatesClose(), is(STATUS.DOING));
+		assertThat(t4.getStatesClose(), is(STATUS.DOING));
+	}
+
+	@Test
+	public void 複雑なクローズ処理の判定2() {
+		final TargetUncloseable t1 = new TargetUncloseable(1);
+		final TargetUnrunnableUncloseable t2 = new TargetUnrunnableUncloseable(2);
+		final TargetNormally t3 = new TargetNormally(3);
+		final TargetUnrunnable t4 = new TargetUnrunnable(4);
+		Using.execute(new Runnable() {
+			@Override
+			public void run() throws IOException {
+				register(t1);
+				register(t2);
+				register(t3);
+				register(t4);
+				t1.run();
+				t2.run();
+				t3.run();
+				t4.run();
+			}
+		});
+		assertThat(t1.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t2.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t3.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t4.getStatesInitialize(), is(STATUS.DONE));
+		assertThat(t1.getStatesRun(), is(STATUS.DONE));
+		assertThat(t2.getStatesRun(), is(STATUS.DOING));
+		assertThat(t3.getStatesRun(), is(STATUS.NOT_DONE));
+		assertThat(t4.getStatesRun(), is(STATUS.NOT_DONE));
+		assertThat(t1.getStatesClose(), is(STATUS.DOING));
+		assertThat(t2.getStatesClose(), is(STATUS.DOING));
+		assertThat(t3.getStatesClose(), is(STATUS.DONE));
+		assertThat(t4.getStatesClose(), is(STATUS.DONE));
 	}
 
 }
