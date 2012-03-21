@@ -10,7 +10,7 @@ import org.junit.Test;
 public class UsingTest {
 
 	@Test
-	public void •’Ê‚Ìˆ—() {
+	public void æ™®é€šã®å‡¦ç†() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -26,7 +26,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void ŠO•”ƒNƒ‰ƒX‚Ì•Ï”‚ğˆ—() {
+	public void å¤–éƒ¨ã‚¯ãƒ©ã‚¹ã®å¤‰æ•°ã‚’å‡¦ç†() {
 		final TargetNormally t1 = new TargetNormally(1);
 		final TargetNormally t2 = new TargetNormally(2);
 		IOException[] es = Using.execute(new Runnable() {
@@ -42,7 +42,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void ˆê‚Â–Ú‚Ì•Ï”‚ªÀs‚Å‚«‚È‚¢() {
+	public void ä¸€ã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -64,7 +64,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void “ñ‚Â–Ú‚Ì•Ï”‚ªÀs‚Å‚«‚È‚¢() {
+	public void äºŒã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -86,7 +86,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void O‚Â–Ú‚Ì•Ï”‚ªÀs‚Å‚«‚È‚¢() {
+	public void ä¸‰ã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -108,7 +108,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void ˆê‚Â–Ú‚Ì•Ï”‚ªƒNƒ[ƒY‚Å‚«‚È‚¢() {
+	public void ä¸€ã¤ç›®ã®å¤‰æ•°ãŒã‚¯ãƒ­ãƒ¼ã‚ºã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -130,7 +130,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void “ñ‚Â–Ú‚Ì•Ï”‚ªƒNƒ[ƒY‚Å‚«‚È‚¢() {
+	public void äºŒã¤ç›®ã®å¤‰æ•°ãŒã‚¯ãƒ­ãƒ¼ã‚ºã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -152,7 +152,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void O‚Â–Ú‚Ì•Ï”‚ªƒNƒ[ƒY‚Å‚«‚È‚¢() {
+	public void ä¸‰ã¤ç›®ã®å¤‰æ•°ãŒã‚¯ãƒ­ãƒ¼ã‚ºã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -174,7 +174,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void ˆê‚Â–Ú‚Ì•Ï”‚ªÀs‚àƒNƒ[ƒY‚à‚Å‚«‚È‚¢() {
+	public void ä¸€ã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã‚‚ã‚¯ãƒ­ãƒ¼ã‚ºã‚‚ã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -193,7 +193,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void O‚Â–Ú‚Ì•Ï”‚ªÀs‚Å‚«‚¸ˆê‚Â–Ú‚ÆŒÜ‚Â–Ú‚Ì•Ï”‚ªƒNƒ[ƒY‚Å‚«‚È‚¢() {
+	public void ä¸‰ã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã§ããšä¸€ã¤ç›®ã¨äº”ã¤ç›®ã®å¤‰æ•°ãŒã‚¯ãƒ­ãƒ¼ã‚ºã§ããªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -227,7 +227,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void ˆê‚Â–Ú‚ÆŒÜ‚Â–Ú‚Ì•Ï”‚ªÀs‚Å‚«‚¸O‚Â–Ú‚Ì•Ï”‚ªƒNƒ[ƒY‚Å‚«‚È‚¢_ŒÜ‚Â–Ú‚Íˆ—‚³‚ê‚È‚¢() {
+	public void ä¸€ã¤ç›®ã¨äº”ã¤ç›®ã®å¤‰æ•°ãŒå®Ÿè¡Œã§ããšä¸‰ã¤ç›®ã®å¤‰æ•°ãŒã‚¯ãƒ­ãƒ¼ã‚ºã§ããªã„_äº”ã¤ç›®ã¯å‡¦ç†ã•ã‚Œãªã„() {
 		IOException[] es = Using.execute(new Runnable() {
 			@Override
 			public void run() throws IOException {
@@ -258,7 +258,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void Runnable‚ªnull_execute‚Ìˆø”‚ªnull() {
+	public void RunnableãŒnull_executeã®å¼•æ•°ãŒnull() {
 		try {
 			Using.execute(null);
 		} catch (Throwable t) {
@@ -268,7 +268,7 @@ public class UsingTest {
 	}
 
 	@Test
-	public void Closeable‚Énull_register‚Ìˆø”‚ªnull() {
+	public void Closeableã«null_registerã®å¼•æ•°ãŒnull() {
 		try {
 			Using.execute(new Runnable() {
 				@Override

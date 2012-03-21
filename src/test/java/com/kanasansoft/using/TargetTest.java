@@ -13,7 +13,7 @@ import org.junit.Test;
 import com.kanasansoft.using.TargetBase.STATUS;
 
 /**
- * ÉeÉXÉgópÉIÉuÉWÉFÉNÉgÇÃÉeÉXÉg
+ * „ÉÜ„Çπ„ÉàÁî®„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà„ÅÆ„ÉÜ„Çπ„Éà
  */
 public class TargetTest {
 
@@ -24,7 +24,7 @@ public class TargetTest {
 	private enum TYPE {INITIALIZE, RUN, CLOSE};
 
 	@Test
-	public void ïÅí ÇÃÉ^Å[ÉQÉbÉg() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
+	public void ÊôÆÈÄö„ÅÆ„Çø„Éº„Ç≤„ÉÉ„Éà() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
 		check(TargetNormally.class, 1,
 				getStatus(STATUS.DONE,STATUS.NOT_DONE,STATUS.NOT_DONE),
 				getStatus(STATUS.DONE,STATUS.DONE    ,STATUS.NOT_DONE),
@@ -34,7 +34,7 @@ public class TargetTest {
 	}
 
 	@Test
-	public void é¿çsÇ≈Ç´Ç»Ç¢É^Å[ÉQÉbÉg() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
+	public void ÂÆüË°å„Åß„Åç„Å™„ÅÑ„Çø„Éº„Ç≤„ÉÉ„Éà() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
 		check(TargetUnrunnable.class, 1,
 				getStatus(STATUS.DONE,STATUS.NOT_DONE,STATUS.NOT_DONE),
 				getStatus(STATUS.DONE,STATUS.DOING   ,STATUS.NOT_DONE),
@@ -44,7 +44,7 @@ public class TargetTest {
 	}
 
 	@Test
-	public void ÉNÉçÅ[ÉYÇ≈Ç´Ç»Ç¢É^Å[ÉQÉbÉg() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
+	public void „ÇØ„É≠„Éº„Ç∫„Åß„Åç„Å™„ÅÑ„Çø„Éº„Ç≤„ÉÉ„Éà() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
 		check(TargetUncloseable.class, 1,
 				getStatus(STATUS.DONE,STATUS.NOT_DONE,STATUS.NOT_DONE),
 				getStatus(STATUS.DONE,STATUS.DONE    ,STATUS.NOT_DONE),
@@ -54,7 +54,7 @@ public class TargetTest {
 	}
 
 	@Test
-	public void é¿çsÇ‡ÉNÉçÅ[ÉYÇ‡Ç≈Ç´Ç»Ç¢É^Å[ÉQÉbÉg() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
+	public void ÂÆüË°å„ÇÇ„ÇØ„É≠„Éº„Ç∫„ÇÇ„Åß„Åç„Å™„ÅÑ„Çø„Éº„Ç≤„ÉÉ„Éà() throws InstantiationException, IllegalAccessException, SecurityException, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
 		check(TargetUnrunnableUncloseable.class, 1,
 				getStatus(STATUS.DONE,STATUS.NOT_DONE,STATUS.NOT_DONE),
 				getStatus(STATUS.DONE,STATUS.DOING   ,STATUS.NOT_DONE),
